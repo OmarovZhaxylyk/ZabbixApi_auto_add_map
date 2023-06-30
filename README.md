@@ -8,9 +8,9 @@ curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '{
      params: {
          "output": "extend"
      },
-     "auth": "54f88584205e11948073a0bf09a1c1df",
+     "auth": "some token ",
      "id": 1
-}' http://192.168.200.77/api_jsonrpc.php | jq
+}' http://ip_address/api_jsonrpc.php | jq
 
 After that, I add the hosts to the map using the obtained group_id (for example, 25):
 group_id = 25
