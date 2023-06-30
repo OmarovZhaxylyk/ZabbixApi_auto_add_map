@@ -1,0 +1,73 @@
+router_symbol = 128
+server = 148
+WrkStanon = 178
+SW = 153
+Fw = 27
+cloud = 2
+
+curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '
+{
+    "jsonrpc": "2.0",
+    "method": "hostgroup.get",
+    "params": {
+        "output": "extend"
+
+    },
+    "auth": "",
+    "id": 1
+} ' http://ip_add/api_jsonrpc.php | jq
+
+
+
+curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '
+{
+    "jsonrpc": "2.0",
+    "method": "map.get",
+
+    "params": {
+        "selectSelements": "extend",
+        "selectLinks": "extend"
+    },
+    "auth": "",
+    "id": 1
+} ' http://ip_add/api_jsonrpc.php | jq
+
+*
+curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '
+{
+    "jsonrpc": "2.0",
+    "method": "map.get",
+
+    "params": {
+        "sysmapids": "1",
+        "selectLinks": "extend"
+    },
+    "auth": "",
+    "id": 1
+} ' http://ip_add/api_jsonrpc.php | jq
+*
+curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '
+{
+    "jsonrpc": "2.0",
+    "method": "hostinterface.get",
+    "params": {
+        "output": "extend"
+    },
+    "auth": "",
+    "id": 1
+} ' http://ip_add/api_jsonrpc.php | jq
+
+
+curl -s -k -X POST -H 'Content-Type: application/json-rpc' -d '
+{
+    "jsonrpc": "2.0",
+    "method": "hostinterface.get",
+    "params": {
+        "output": "extend",
+        "hostids": ["10579"]
+    },
+    "auth": "",
+    "id": 1
+}' http://ip_add/api_jsonrpc.php | jq
+
+192.168.200.8
